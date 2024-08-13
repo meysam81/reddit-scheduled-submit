@@ -1,0 +1,39 @@
+name: reddit-scheduled-submit
+branding:
+  icon: "calendar"
+  color: "blue"
+description: Submit message to Reddit at a scheduled time.
+inputs:
+  app-client-id:
+    description: The Reddit app client ID.
+    required: true
+  app-client-secret:
+    description: The Reddit app client secret.
+    required: true
+  username:
+    description: The username of the Reddit user.
+    required: true
+  password:
+    description: The password of the Reddit user.
+    required: true
+  subreddit:
+    description: The subreddit to submit to.
+    required: true
+  title:
+    description: The title to submit.
+    required: true
+  message:
+    description: The message to submit.
+    required: true
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    REDDIT_CLIENT_ID: ${{ inputs.app-client-id }}
+    REDDIT_CLIENT_SECRET: ${{ inputs.app-client-secret }}
+    REDDIT_USERNAME: ${{ inputs.username }}
+    REDDIT_PASSWORD: ${{ inputs.password }}
+    REDDIT_SUBREDDIT: ${{ inputs.subreddit }}
+  args:
+    - --title="${{ inputs.title }}"
+    - --message="${{ inputs.message }}"

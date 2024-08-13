@@ -83,14 +83,6 @@ on:
         description: "Subreddit to post to"
         required: false
         default: "r/test"
-      username:
-        description: "Reddit username"
-        required: false
-        default: ""
-      password:
-        description: "Reddit password"
-        required: false
-        default: ""
 
 jobs:
   reddit-scheduled-submit:
@@ -102,13 +94,13 @@ jobs:
         env:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
-          REDDIT_USERNAME: ${{ github.event.inputs.username || secrets.REDDIT_USERNAME }}
-          REDDIT_PASSWORD: ${{ github.event.inputs.password || secrets.REDDIT_PASSWORD }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+          REDDIT_SUBREDDIT: ${{ github.event.inputs.subreddit }}
         uses: meysam81/reddit-scheduled-submit@v1
         with:
           title: ${{ github.event.inputs.title }}
           message: ${{ github.event.inputs.message }}
-          subreddit: ${{ github.event.inputs.subreddit }}
 ```
 
 Make sure to set up the following secrets in your GitHub
