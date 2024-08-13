@@ -35,5 +35,5 @@ runs:
     REDDIT_PASSWORD: ${{ inputs.password }}
     REDDIT_SUBREDDIT: ${{ inputs.subreddit }}
   args:
-    - --title="${{ inputs.title }}"
-    - --message="${{ inputs.message }}"
+    - --title=${{ inputs.title }}
+    - --message=${{ inputs.message }}
