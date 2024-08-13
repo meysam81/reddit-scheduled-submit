@@ -66,7 +66,8 @@ export REDDIT_SUBREDDIT="CHANGE_THIS"
 
 ### GitHub Actions Usage
 
-To use this script as a GitHub Action, you can create a workflow file (e.g., `.github/workflows/post-to-reddit.yml`) with the following content:
+To use this script as a GitHub Action, you can create a workflow file (e.g.,
+`.github/workflows/ci.yml`) with the following content:
 
 ```yaml
 name: ci
