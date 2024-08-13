@@ -76,33 +76,30 @@ on:
   workflow_dispatch:
     inputs:
       title:
-        description: "Post title"
+        description: Post title
         required: true
       message:
-        description: "Post message"
+        description: Post message
         required: true
       subreddit:
-        description: "Subreddit to post to"
+        default: r/test
+        description: Subreddit to post to
         required: false
-        default: "r/test"
 
 jobs:
   reddit-scheduled-submit:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
       - name: Post to Reddit
-        env:
-          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
-          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
-          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
-          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
-          REDDIT_SUBREDDIT: ${{ github.event.inputs.subreddit }}
         uses: meysam81/reddit-scheduled-submit@v1
         with:
-          title: ${{ github.event.inputs.title }}
+          client-id: ${{ secrets.REDDIT_CLIENT_ID }}
+          client-secret: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          username: ${{ secrets.REDDIT_USERNAME }}
+          password: ${{ secrets.REDDIT_PASSWORD }}
+          subreddit: ${{ github.event.inputs.subreddit }}
           message: ${{ github.event.inputs.message }}
+          title: ${{ github.event.inputs.title }}
 ```
 
 Make sure to set up the following secrets in your GitHub

@@ -4,10 +4,10 @@ branding:
   color: "blue"
 description: Submit message to Reddit at a scheduled time.
 inputs:
-  app-client-id:
+  client-id:
     description: The Reddit app client ID.
     required: true
-  app-client-secret:
+  client-secret:
     description: The Reddit app client secret.
     required: true
   username:
@@ -29,8 +29,8 @@ runs:
   using: docker
   image: Dockerfile
   env:
-    REDDIT_CLIENT_ID: ${{ inputs.app-client-id }}
-    REDDIT_CLIENT_SECRET: ${{ inputs.app-client-secret }}
+    REDDIT_CLIENT_ID: ${{ inputs.client-id }}
+    REDDIT_CLIENT_SECRET: ${{ inputs.client-secret }}
     REDDIT_USERNAME: ${{ inputs.username }}
     REDDIT_PASSWORD: ${{ inputs.password }}
     REDDIT_SUBREDDIT: ${{ inputs.subreddit }}
