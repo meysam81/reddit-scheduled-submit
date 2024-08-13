@@ -41,7 +41,7 @@ To use this script, you need:
 Clone this repository:
 
 ```sh
-git clone https://github.com/yourusername/reddit-markdown-poster.git
+git clone https://github.com/meysam81/reddit-scheduled-submit
 ```
 
 Install the required dependencies:
