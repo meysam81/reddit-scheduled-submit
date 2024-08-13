@@ -59,6 +59,7 @@ export REDDIT_CLIENT_ID="CHANGE_THIS"
 export REDDIT_CLIENT_SECRET="CHANGE_THIS"
 export REDDIT_USERNAME="CHANGE_THIS"
 export REDDIT_PASSWORD="CHANGE_THIS"
+export REDDIT_SUBREDDIT="CHANGE_THIS"
 
 ./main.py --title "Hello, Reddit!" --message "This is a test message."
 ```
@@ -68,7 +69,7 @@ export REDDIT_PASSWORD="CHANGE_THIS"
 To use this script as a GitHub Action, you can create a workflow file (e.g., `.github/workflows/post-to-reddit.yml`) with the following content:
 
 ```yaml
-name: Post to Reddit
+name: ci
 
 on:
   workflow_dispatch:
