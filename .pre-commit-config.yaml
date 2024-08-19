@@ -79,7 +79,7 @@ repos:
       - id: shellcheck
       - id: terragrunt-hclfmt
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.5.5
+    rev: v0.6.1
     hooks:
       - id: ruff
         types_or:
