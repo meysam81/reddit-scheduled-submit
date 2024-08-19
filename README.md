@@ -9,6 +9,7 @@
   - [Installation](#installation)
   - [Usage](#usage)
     - [Local Usage](#local-usage)
+    - [Docker](#docker)
     - [GitHub Actions Usage](#github-actions-usage)
   - [Contributing](#contributing)
   - [License](#license)
@@ -62,6 +63,24 @@ export REDDIT_PASSWORD="CHANGE_THIS"
 export REDDIT_SUBREDDIT="CHANGE_THIS"
 
 ./main.py --title "Hello, Reddit!" --message "This is a test message."
+```
+
+### Docker
+
+To run the Docker container, you can use the following command:
+
+```sh
+docker run \
+  --rm \
+  --name reddit-scheduled-submit \
+  -e REDDIT_CLIENT_ID="CHANGE_THIS" \
+  -e REDDIT_CLIENT_SECRET="CHANGE_THIS" \
+  -e REDDIT_USERNAME="CHANGE_THIS" \
+  -e REDDIT_PASSWORD="CHANGE_THIS" \
+  -e REDDIT_SUBREDDIT="CHANGE_THIS" \
+  ghcr.io/meysam81/reddit-scheduled-submit:v1 \
+  --title "Hello, Reddit!" \
+  --message "This is a test message."
 ```
 
 ### GitHub Actions Usage
