@@ -50,7 +50,7 @@ repos:
           - --autofix
         exclude: .*docs/codes/2024/0012/junk/registration-flow-response.json
   - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
-    rev: v9.17.0
+    rev: v9.18.0
     hooks:
       - id: commitlint
         stages:
@@ -79,7 +79,7 @@ repos:
       - id: shellcheck
       - id: terragrunt-hclfmt
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.6.3
+    rev: v0.6.5
     hooks:
       - id: ruff
         types_or:
