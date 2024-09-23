@@ -58,7 +58,7 @@ repos:
         additional_dependencies:
           - "@commitlint/config-conventional"
   - repo: https://github.com/tofuutils/pre-commit-opentofu
-    rev: v1.0.3
+    rev: v1.0.4
     hooks:
       - id: tofu_fmt
       # - id: tfupdate
@@ -79,7 +79,7 @@ repos:
       - id: shellcheck
       - id: terragrunt-hclfmt
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.6.5
+    rev: v0.6.7
     hooks:
       - id: ruff
         types_or:
