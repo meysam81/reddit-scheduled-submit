@@ -1,11 +1,11 @@
-FROM python:3.12-alpine AS deps
+FROM python:3.13-alpine AS deps
 
 COPY requirements.txt /
 
 RUN pip install --upgrade pip && \
     pip wheel --no-cache-dir --no-deps --wheel-dir=/wheel -r /requirements.txt
 
-FROM python:3.12-alpine AS app
+FROM python:3.13-alpine AS app
 
 LABEL org.opencontainers.image.source=https://github.com/meysam81/reddit-scheduled-submit
 LABEL org.opencontainers.image.description="A simple script to schedule posts on Reddit."
