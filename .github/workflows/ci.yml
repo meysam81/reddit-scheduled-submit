@@ -10,16 +10,16 @@ on:
     tags:
       - "*"
 
-env:
-  IMAGE_REPOSITORY: ${{ github.repository }}
-  IMAGE_REGISTRY: ghcr.io
-
 jobs:
   build-edge:
     if: |
       contains(fromJson('["push","pull_request"]'), github.event_name) &&
       github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
     steps:
       - name: Build docker
         uses: meysam81/build-docker@main
