@@ -2,7 +2,9 @@
 
 [![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://developer.mend.io/github/meysam81/reddit-scheduled-submit)
 
-**NOTE:** Reddit has been revoking and removing certain third-party and grandfathered OAuth2 client codes and app registrations **as part of stricter developer-platform and anti-bot changes**. This repo no longer works with the new policy!
+> [!WARNING]
+> **NOTE:** Reddit has been revoking and removing certain third-party and grandfathered OAuth2 client codes and app registrations **as part of stricter developer-platform and anti-bot changes**. This repo no longer works with the new policy!
+
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
